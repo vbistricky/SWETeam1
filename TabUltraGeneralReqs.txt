@@ -1,0 +1,34 @@
+TabUltra All Requirements
+
+Tabs-
+Select/Unselect checkboxes
+Scrollbar if too many tabs are open (up to 100, visual in github)
+Click on tab to open
+Save selected tabs to a new group
+Add selected tabs to an existing group
+Remove tabs from an existing group
+Select specific tabs to open when opening a group
+
+Groups-
+Create a group
+Delete a group
+Rename a group
+Sort by most used, name, etc
+View group metadata (created, last edited/used, etc)
+
+UI Specific Elements
+Checkboxes
+Scrollbar
+Create group
+Add to group
+Delete a group/Rename (not sure if can combine into an edit button)
+Sorting functionality
+Hovering over group displays metadata
+Clicking on group shows all tabs in group
+Redirect to landing page button
+
+If you think it would be best for a button to take you to a new "tab" in the window (e.x., if theres a general "group" button,
+does it take you to a different view from the main tabs view?), you can add that in, just spitball some ideas. If you think of
+anything else I forgot or you think would make things easier to use/efficient, feel free to add it.
+
+
