@@ -31,4 +31,3 @@ If you think it would be best for a button to take you to a new "tab" in the win
 does it take you to a different view from the main tabs view?), you can add that in, just spitball some ideas. If you think of
 anything else I forgot or you think would make things easier to use/efficient, feel free to add it.
 
-
