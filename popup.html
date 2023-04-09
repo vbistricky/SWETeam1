@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Ultra</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="popup.js"></script>
+<style>
+    h2 {text-align: center;}
+    h2 {font-size: xx-large;}
+    
+</style>
+</head>
+<body >
+   <div class="headerPane"> 
+    <img src="TabUltraLogo.png" alt="Tab Ultra Logo" width="250">
+    &nbsp;     &nbsp; 
+    <img id="SettingsPic" src="settings4PNG.png" alt="Settings Logo"  height= "60">
+    <br> 
+
+    <button class="headerButtons" id="addCurrentTabBtn">Add Current Tab</button>
+    <button class="headerButtons" id="supportBtn">Support</button>
+    <br>
+    <button class="headerButtons" id="addUrlBtn">Add URL</button>
+    <input id="addUrlText" type="url" placeholder="https://..."/>
+    <br>
+    
+   </div>
+
+
+  <div class="contentPane">
+    <h2>Currently Open Tabs: </h2>
+    <div class="tabsPane"> 
+    <ol id="ext_tabs">
+
+    </ol>
+    </div>
+    </div>
+
+    <div class="footerPane"> 
+
+     <button class="footerButtons" id="createNewBtn">Create New Group </button>   
+     |
+     |
+     <button class="footerButtons" id="addToGroupBtn">Add to Group</button>
+     <select id="selectGroupFromList" name="selectGroupFromList" list="groupList">
+
+        <option value="Select Group:" selected>Select Group</option>
+        <option value="Test1">Test Group 1</option>
+        <option value="Test2">Test Group 2</option>
+     </select>
+    </div>
+
+
+</body>
+</html>
