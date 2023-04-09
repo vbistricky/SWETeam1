@@ -7,7 +7,7 @@
     <title>Tab Ultra</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src="popup.js"></script>
+    
 <style>
     h2 {text-align: center;}
     h2 {font-size: xx-large;}
@@ -15,45 +15,18 @@
 </style>
 </head>
 <body >
-   <div class="headerPane"> 
-    <img src="Images/TabUltraLogo.png" alt="Tab Ultra Logo" width="250">
-    &nbsp;     &nbsp; 
-    <img id="SettingsPic" src="Images/settings4PNG.png" alt="Settings Logo"  height= "60">
-    <br> 
-
-    <button class="headerButtons" id="addCurrentTabBtn">Add Current Tab</button>
-    <button class="headerButtons" id="supportBtn">Support</button>
-    <br>
-    <button class="headerButtons" id="addUrlBtn">Add URL</button>
-    <input id="addUrlText" type="url" placeholder="https://..."/>
-    <br>
     
-   </div>
+    <h2>Tab Ultra</h2>
 
-
-  <div class="contentPane">
-    <h2>Currently Open Tabs: </h2>
-    <div class="tabsPane"> 
     <ol id="ext_tabs">
 
     </ol>
-    </div>
-    </div>
 
-    <div class="footerPane"> 
+    <button id="save">Save Active Tabs</button>
 
-     <button class="footerButtons" id="createNewBtn">Create New Group </button>   
-     |
-     |
-     <button class="footerButtons" id="addToGroupBtn">Add to Group</button>
-     <select id="selectGroupFromList" name="selectGroupFromList" list="groupList">
+    <ul id="grouped_tabs">
 
-        <option value="Select Group:" selected>Select Group</option>
-        <option value="Test1">Test Group 1</option>
-        <option value="Test2">Test Group 2</option>
-     </select>
-    </div>
-
-
+    </ul>
 </body>
+<script src="popup.js"></script>
 </html>
