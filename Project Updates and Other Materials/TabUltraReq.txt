@@ -1,0 +1,11 @@
+TabUltra Functional Requirements:
+
+Pop-up window: Eli
+Checkboxes: Eli
+Scrollbar: Eli
+
+Logo design: Dylan
+UI Design: Dylan
+Website Design: Dylan
+
+JavaScript/HTML/CSS Basics: Adam/Andrew
