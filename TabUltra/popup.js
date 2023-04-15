@@ -2,9 +2,7 @@
 //into chrome.storage
 function saveGroup(saved_tabs, gName){
 
-    //Save group under arbitrary key "key1"...
-    //Will edit to store with specified keys once multi-group
-    //functionality is implemented
+    //Save group under given key
     chrome.storage.local.set({ [gName]: saved_tabs }, function() {
         if (chrome.runtime.lastError) {
             console.error(chrome.runtime.lastError);
@@ -69,6 +67,9 @@ function displayAll(){
                 const tabElement = document.createElement("li");
                 const p = document.createElement("p");
                 p.innerText = tab.title;
+                p.addEventListener("click", () => {
+                    chrome.tabs.create({url: tab.url});
+                })
                 tabElement.appendChild(p);
                 groupList.appendChild(tabElement);
             });
@@ -147,6 +148,13 @@ const saveButton = document.getElementById("save");
 saveButton.addEventListener("click", function() {
     
     var groupName = document.getElementById("name").value;
+
+    if(groupName === ""){
+        alert("ERROR: MUST GIVE GROUP A NAME");
+        return;
+    }
+
+    groupName = groupName.charAt(0).toUpperCase() + groupName.slice(1);
 
     console.log(groupName);
 
