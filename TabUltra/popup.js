@@ -1,16 +1,16 @@
 //Function that takes a group of tabs as input and saves them
 //into chrome.storage
-function saveGroup(saved_tabs){
+function saveGroup(saved_tabs, gName){
 
     //Save group under arbitrary key "key1"...
     //Will edit to store with specified keys once multi-group
     //functionality is implemented
-    chrome.storage.local.set({ "key1": saved_tabs }, function() {
+    chrome.storage.local.set({ [gName]: saved_tabs }, function() {
         if (chrome.runtime.lastError) {
             console.error(chrome.runtime.lastError);
           } else {
             //Confirmation alert for testing purposes
-            alert("GROUP SAVED")
+            alert("GROUP " + gName + " was saved!")
           }
     });
 };
@@ -20,8 +20,8 @@ function displayGroups(){
 
     //Retrieves saved group under key "key1"...
     //Will edit in the future to retrieve all groups, no matter the key
-    chrome.storage.local.get("key1", function (result) {
-        group = result.key1;
+    chrome.storage.local.get("Adam's Group", function (result) {
+        group = result["Adam's Group"];
 
         //Iterate through group
         group.forEach((tab, index) => {
@@ -39,6 +39,43 @@ function displayGroups(){
             tabElement.appendChild(p);
             tabs.appendChild(tabElement);
         });
+    });
+}
+
+function displayAll(){
+
+    chrome.storage.local.get(null, function(items) {
+        const container = this.document.querySelector("#group_container");
+        for (let key in items) {
+            console.log("                 " + key);
+
+            var title = document.createElement("h3");
+            var titleText = document.createTextNode(key);
+            title.appendChild(titleText);
+
+            var delButton = document.createElement("button");
+            delButton.textContent = "Delete Group"
+            delButton.addEventListener("click", function(){
+                chrome.storage.local.remove(key);
+                //alert(key + " WOULD BE DELETED");
+                location.reload();
+            })
+
+            var groupList = document.createElement("ul");
+
+            items[key].forEach((tab) => {
+                console.log(tab.title);
+
+                const tabElement = document.createElement("li");
+                const p = document.createElement("p");
+                p.innerText = tab.title;
+                tabElement.appendChild(p);
+                groupList.appendChild(tabElement);
+            });
+            container.appendChild(title);
+            container.appendChild(delButton);
+            container.appendChild(groupList);
+        }
     });
 }
 
@@ -98,7 +135,8 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     //This is to display all saved/grouped tabs upon startup/load
-    displayGroups();
+    //displayGroups();
+    displayAll();
 
 
 });
@@ -107,8 +145,15 @@ window.addEventListener("DOMContentLoaded", function(){
 //saveGroup(). Also reloads the popup to update the saved group
 const saveButton = document.getElementById("save");
 saveButton.addEventListener("click", function() {
+    
+    var groupName = document.getElementById("name").value;
+
+    console.log(groupName);
+
+    document.getElementById("name").value = "";
+
     chrome.runtime.sendMessage({ type: "getTabs"}, function (response){
-        saveGroup(response);
+        saveGroup(response, groupName);
     });
 
     location.reload();
