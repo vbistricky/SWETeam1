@@ -27,6 +27,12 @@
             "js": ["popup.js"]
             
 
+        },
+        {
+
+            "matches":["<all_urls>"],
+          
+            "js": ["saved.js"]
         }
 
 
