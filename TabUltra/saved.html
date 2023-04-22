@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Ultra</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body>
+   
+   <div class="headerPaneGroups"> 
+       <!--
+    
+    Header Pane
+    -Same for Both popup.html and savedGroup.html
+    -Includes "Tab ultra Logo" and Settings Cog wheel 
+    -Settings Cog wheel is a hyperlink to Support page
+    
+    -->
+    <img src="Images/TabUltraLogo.png" alt="Tab Ultra Logo" width="250">
+    &nbsp;     &nbsp; 
+    <a href ="support.html" target="_blank"> 
+        <img id="SettingsPic" src="Images/settings4PNG.png" alt="Settings Logo"  height= "60">
+     </a>
+        
+    <br> 
+
+  <!--
+
+    *Removed Header Buttons. as of now no function
+    
+    <button class="headerButtons" id="addCurrentTabBtn">Add Current Tab</button> 
+    <button class="headerButtons" id="supportBtn">Support</button>
+    <br>
+    <button class="headerButtons" id="addUrlBtn">Add URL</button>
+    <input id="addUrlText" type="url" placeholder="https://..."/>
+    <br>
+    -->
+    
+    </div>
+    
+   <div class="contentPaneGroups">
+    <!--
+        Content Pane 
+        -includes Title and Saved Groups List 
+        -Collapsable lists(?) (Nonfucntional)
+         
+    -->
+    <h2 id="contentHeadingGroups"> Currently Saved Groups: </h2>
+    
+        <div class="groupsPane" id="group_containernew">
+
+        </div>
+    </div>
+
+        <div class="footerPaneGroups"> 
+
+         <!--
+            Footer Pane
+            -inlcudes all buttons after saved groups list 
+            -Create New Group Btn: Creates new [Empty] group from Groups page (Nonfunctional)
+            -Tabs 
+         -->   
+         <br>
+        <button class="footerButtonsGroups" id="createNewGroup"> Create New Group</button>   
+        &nbsp;
+        <button class="footerButtonsGroups" id="tabsPage"> Tabs Page </button>
+    
+         </div>
+
+
+
+    
+
+
+    
+
+
+
+
+</body>
+
+<script src="saved.js"></script>
+</html>

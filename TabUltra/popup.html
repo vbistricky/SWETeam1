@@ -6,33 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tab Ultra</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script src="popup.js"></script>
-<style>
-    h2 {text-align: center;}
-    h2 {font-size: xx-large;}
+    <link rel="stylesheet" href="style.css"> 
     
-</style>
+    
+
 </head>
 <body >
-   <div class="headerPane"> 
+
+
+
+   <div class="headerPaneTabs"> 
+      <!--
+    
+    Header Pane
+    -Same for Both popup.html and savedGroup.html
+    -Includes "Tab ultra Logo" and Settings Cog wheel 
+    -Settings Cog wheel is a hyperlink to Support page
+    
+    -->
+  
     <img src="Images/TabUltraLogo.png" alt="Tab Ultra Logo" width="250">
     &nbsp;     &nbsp; 
+    <a href ="support.html" target="_blank"> 
     <img id="SettingsPic" src="Images/settings4PNG.png" alt="Settings Logo"  height= "60">
+    </a>
     <br> 
 
-    <button class="headerButtons" id="addCurrentTabBtn">Add Current Tab</button>
+   <!--
+
+    *Removed Header Buttons. as of now no function
+    
+    <button class="headerButtons" id="addCurrentTabBtn">Add Current Tab</button> 
     <button class="headerButtons" id="supportBtn">Support</button>
     <br>
     <button class="headerButtons" id="addUrlBtn">Add URL</button>
     <input id="addUrlText" type="url" placeholder="https://..."/>
     <br>
+    -->
     
    </div>
 
 
-  <div class="contentPane">
-    <h2>Currently Open Tabs: </h2>
+  <div class="contentPaneTabs">
+    <!--
+        Content Pane 
+        -includes Title and Tabs
+         
+    -->
+    <h2 id="contentHeadingTabs">Currently Open Tabs </h2>
     <div class="tabsPane"> 
     <ol id="ext_tabs">
 
@@ -40,20 +61,44 @@
     </div>
     </div>
 
-    <div class="footerPane"> 
+    <div class="footerPaneTabs"> 
+    <!--
+        Footer Pane
+        -includes all things below tab content area 
+        -Group name Text Box: Title of new group selected
+        -Save Selected Btn: Saves all checked Tabs (NonFucntional)
+        -Save All Btn: Saves all buttons currently open 
+        -Select Group Dropdown : Names of all Saved groups stored in datalist (NonFunctional)
+        -Add Selected Group Btn: adds the selected Tabs to the selected group (NonFuncitonal)
+        -Groups Btn: Redirects to savedGroup.html
+    -->
 
-     <button class="footerButtons" id="createNewBtn">Create New Group </button>   
-     |
-     <button class="footerButtons" id="addToGroupBtn">Add to Group</button>
+
+          
+     <form> 
+        Group Name: <input type = "text" id = "groupName">
+        <button class="footerButtonsTabs" id="saveSelectedTabs"> Save Selected Tabs</button>
+        <button class="footerButtonsTabs" id="saveAllTabs">Save All  </button> 
+     </form>   
+     
+     <br>
+     
      <select id="selectGroupFromList" name="selectGroupFromList" list="groupList">
 
-        <option value="Select Group:" selected>Select Group</option>
+        <option value="Select Group:" selected>Select...</option>
         <option value="Test1">Test Group 1</option>
         <option value="Test2">Test Group 2</option>
-        <option value="Test 3">Test Group 3</option>
      </select>
+     <button class="footerButtons" id="addToGroupBtn">Add Selected to Group</button>
+   
+
+     <button class ="footerButtons" id="groupsPage"> Groups Page</button>
+    
     </div>
 
 
 </body>
+<!--Important to have Script link here to make sure the page loads before performing any JS action-->
+<script src="popup.js"></script>
+
 </html>

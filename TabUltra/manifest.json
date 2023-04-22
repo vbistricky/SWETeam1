@@ -8,14 +8,14 @@
     },
 
     "icons": {
-        "16": "icon16.png",
-        "32": "icon32.png",
-        "64": "icon64.png",
-        "128": "icon128.png"
+        "16": "Images/icon16.png",
+        "32": "Images/icon32.png",
+        "64": "Images/icon64.png",
+        "128": "Images/icon128.png"
       },
     "permissions":[
     
-        "tabs"
+        "tabs", "storage"
 
     ],
     "content_scripts":[
@@ -26,6 +26,12 @@
             "js": ["popup.js"]
             
 
+        },
+        {
+
+            "matches":["<all_urls>"],
+          
+            "js": ["saved.js"]
         }
 
 
