@@ -9,14 +9,32 @@ function displayAll(){
         for (let key in items) {
             console.log("                 " + key);
 
+            //Styling for linebreak
+            const linebreak = document.createElement("br"); 
+
+            //Creating title for each Group
+            var field = document.createElement("h4"); 
+            field.textContent += "Group Name:"; 
+                //styling for field group
+                field.style.color = 'rgb(109, 122, 221)';
+                field.style.display = 'inline'; 
+
             //Create title for group
             var title = document.createElement("h3");
             var titleText = document.createTextNode(key);
             title.appendChild(titleText);
+                //Styling for Title
+                title.style.display = 'inline'; 
+                title.style.position = 'relative'; 
+                title.style.left = '5px'; 
+            
 
             //Create button to open all tabs in group
             var openButton = document.createElement("button");
-            openButton.textContent = "Open all tabs in Group";
+            openButton.textContent = "Open all tabs ";
+                //styling for open all
+                openButton.style.position = 'relative'; 
+                openButton.style.left = '55px';
 
             //Store all tabs for specific group
             const groupUrls = [];
@@ -34,6 +52,10 @@ function displayAll(){
             //Create button to delete group
             var delButton = document.createElement("button");
             delButton.textContent = "Delete Group";
+                //styling for delete button
+                delButton.style.position = 'relative'; 
+                delButton.style.left = '65px';
+                delButton.style.backgroundColor = 'red';
 
             //Use storage remove function to delete group when clicked
             delButton.addEventListener("click", function(){
@@ -76,10 +98,18 @@ function displayAll(){
 
             //In order, add title of group, open button, close button,
             //and list of tabs to the container
+            container.appendChild(field); 
             container.appendChild(title);
+            container.appendChild(groupList);
             container.appendChild(openButton);
             container.appendChild(delButton);
-            container.appendChild(groupList);
+            container.appendChild(linebreak);
+           
+
+            
+
+            
+            
 
             //This process is repeated for each group of tabs
         }
@@ -96,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 //New Button that navigates to first page
-const pageButton = document.getElementById('page1');
+const pageButton = document.getElementById('tabsPage');
 pageButton.addEventListener('click', function() {
     chrome.extension.getViews({type: 'popup'}).forEach(function(view) {
         view.location.href = 'popup.html';

@@ -1,14 +1,15 @@
+/*CSS Elements*/
 body{
     max-width: 350px;
     width: 350px;
     max-height: 400px;
     height: 400px;
-    color: white;
-    background-color: blueviolet;
+    color: rgb(54, 72, 206);
+    background-color: rgb(178, 182, 216);
 }
 
 li {
-    /*list-style-type: decimal;*/
+    list-style-type: decimal;
     padding: 10px 10px;
     font-size: medium;
     border-radius: 10px;
@@ -25,4 +26,138 @@ li.active{
 p {
 
     cursor: pointer;
+    display:inline; 
+    background-color:rgb(163, 167, 204);
+    
+}
+
+
+
+
+/*Header Panes*/
+.headerPaneTabs{ 
+    position: relative; 
+    top: 0; 
+    border-bottom:rgb(54, 72, 206); /*solid border underline*/
+    border-right:  rgb(178, 182, 216);
+    border-left: rgb(178, 182, 216); 
+    border-top:  rgb(178, 182, 216);
+    border-style: solid;
+}
+
+.headerPaneGroups{ 
+    position: relative; 
+    top: 0; 
+    border-bottom:rgb(54, 72, 206); /*solid border underline*/
+    border-right:  rgb(178, 182, 216);
+    border-left: rgb(178, 182, 216); 
+    border-top:  rgb(178, 182, 216);
+    border-style: solid;
+}
+
+
+
+
+/*Content Panes*/
+.contentPaneTabs{ 
+    position: relative; 
+    top: 10; 
+    
+}
+       
+.contentPaneGroups{ 
+        position: relative; 
+        top: 10; 
+        
+ }
+
+#contentHeadingTabs{ 
+    font-weight: normal;  
+    font-size: 255%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: Center;
+}
+
+#contentHeadingGroups{ 
+    font-weight: normal;  
+    font-size: 255%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: Center;
+}
+
+.tabsPane{ 
+    position: relative;
+    height: 220px; 
+    overflow:scroll; /*Scroll bar attribute*/
+    overflow-x: hidden;
+    background-color:rgb(178, 182, 216);
+    border-bottom:rgb(54, 72, 206);
+    border-right:  rgb(178, 182, 216); /*border around all sides but scroll bar side */
+    border-left: rgb(54, 72, 206);
+    border-top:  rgb(54, 72, 206);
+    border-style: solid; 
+}
+
+.groupsPane{ 
+    position: relative;
+    height: 220px; 
+    overflow:scroll; /*Scroll bar attribute*/
+    overflow-x: hidden;
+    background-color:rgb(178, 182, 216);
+    border-bottom:rgb(54, 72, 206);
+    border-right:  rgb(178, 182, 216); /*border around all sides but scroll bar side */
+    border-left: rgb(54, 72, 206);
+    border-top:  rgb(54, 72, 206);
+    border-style: solid; 
+}
+
+
+
+/*Footer Panes*/
+
+.footerPaneTabs{ 
+    position: relative;
+    padding-top: 15px;
+}
+
+.footerPaneGroups{ 
+    position: relative;
+    padding-top: 15px;
+}
+
+.footerButtonsTabs{ 
+
+    text-align: center;
+    border-radius: 4px;
+    border-color:rgb(178, 182, 216) ;
+}
+
+.footerButtonsGroups{ 
+    position:relative;
+    left:16%; 
+    text-align: center;
+    border-radius: 4px;
+    border-color:rgb(178, 182, 216) ;
+}
+
+#groupName{ 
+    width: 85px;
+}
+
+#selectGroupFromList{
+    width:95px; 
+}
+
+ #saveSelectedTabs{ 
+    text-align: center;
+    border-radius: 4px;
+    border-color:rgb(178, 182, 216) ;
+    width: 100px;
+}
+
+#saveAllTabs{ 
+    text-align: center;
+    border-radius: 4px;
+    border-color:rgb(178, 182, 216) ;
+    width: 70px;
 }

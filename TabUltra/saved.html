@@ -8,42 +8,81 @@
 
     <link rel="stylesheet" href="style.css">
     
-<style>
-    h2 {text-align: center;}
-    h2 {font-size: xx-large;}
 
-</style>
 </head>
 <body>
-
-    <div class="headerPane"> 
+   
+   <div class="headerPaneGroups"> 
+       <!--
+    
+    Header Pane
+    -Same for Both popup.html and savedGroup.html
+    -Includes "Tab ultra Logo" and Settings Cog wheel 
+    -Settings Cog wheel is a hyperlink to Support page
+    
+    -->
     <img src="TabUltraLogo.png" alt="Tab Ultra Logo" width="250">
     &nbsp;     &nbsp; 
-    <img id="SettingsPic" src="settings4PNG.png" alt="Settings Logo"  height= "60">
+    <a href ="support.html" target="_blank"> 
+        <img id="SettingsPic" src="settings4PNG.png" alt="Settings Logo"  height= "60">
+     </a>
+        
     <br> 
 
-    <button class="headerButtons" id="addCurrentTabBtn">Add Current Tab</button>
+  <!--
+
+    *Removed Header Buttons. as of now no function
+    
+    <button class="headerButtons" id="addCurrentTabBtn">Add Current Tab</button> 
     <button class="headerButtons" id="supportBtn">Support</button>
-    
-    <button class="headerButtons" id="addUrlBtn">Add URL</button>
-    <input id="addUrlText" type="url" placeholder="https://.../%22/%3E">
-
-    
-    </div>
     <br>
-
-    <button id="page1"> FIRST PAGE </button>
-
-    <h3> Currently Saved Groups: </h3>
-
-    <div id="group_containernew">
-
+    <button class="headerButtons" id="addUrlBtn">Add URL</button>
+    <input id="addUrlText" type="url" placeholder="https://..."/>
+    <br>
+    -->
+    
     </div>
+    
+   <div class="contentPaneGroups">
+    <!--
+        Content Pane 
+        -includes Title and Saved Groups List 
+        -Collapsable lists(?) (Nonfucntional)
+         
+    -->
+    <h2 id="contentHeadingGroups"> Currently Saved Groups: </h2>
+    
+        <div class="groupsPane" id="group_containernew">
+
+        </div>
+    </div>
+
+        <div class="footerPaneGroups"> 
+
+         <!--
+            Footer Pane
+            -inlcudes all buttons after saved groups list 
+            -Create New Group Btn: Creates new [Empty] group from Groups page (Nonfunctional)
+            -Tabs 
+         -->   
+         <br>
+        <button class="footerButtonsGroups" id="createNewGroup"> Create New Group</button>   
+        &nbsp;
+        <button class="footerButtonsGroups" id="tabsPage"> Tabs Page </button>
+    
+         </div>
+
 
 
     
+
+
+    
+
+
 
 
 </body>
+
 <script src="saved.js"></script>
 </html>
