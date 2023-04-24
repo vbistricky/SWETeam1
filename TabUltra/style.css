@@ -161,3 +161,67 @@ p {
     border-color:rgb(178, 182, 216) ;
     width: 70px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+NO LONGER NEEDED bcause we got rid of header buttons
+
+
+#supportBtn{ 
+    background-color: blueviolet;
+    width: 151px;
+}
+#addCurrentTabBtn{ 
+    width: 175px; 
+
+}
+
+
+
+/*Footer Panes*/
+
+.footerPaneTabs{ 
+    position: relative;
+    padding-top: 15px;
+}
+
+.footerPaneGroups{ 
+    position: relative;
+    padding-top: 15px;
+}
+
+.footerButtonsTabs{ 
+
+    text-align: center;
+    border-radius: 4px;
+    border-color:rgb(178, 182, 216) ;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+#saveAllTabs{ 
+    text-align: center;
+    border-radius: 4px;
+    border-color:rgb(178, 182, 216) ;
+    width: 70px;
+}

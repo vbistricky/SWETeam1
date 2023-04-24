@@ -13,9 +13,11 @@ function saveGroup(saved_tabs, gName){
     });
 };
 
+
 //This code is ran every time the default popup is opened/loaded
 window.addEventListener("DOMContentLoaded", function(){
 var iter = 0;
+
     //Message sent to all pages, background.js picks it up and
     //sends back all open tabs
     chrome.runtime.sendMessage({ type: "getTabs"}, function (response){
@@ -32,9 +34,11 @@ var iter = 0;
             const check = document.createElement("input");
             const linebreak = document.createElement("br"); 
             
+
             p.setAttribute("id", iter);
             
             check.setAttribute("id", "C" + iter);
+
             check.setAttribute("type", "checkbox");
 
             //Make the text equal to the tab's title
@@ -117,6 +121,7 @@ saveButton.addEventListener("click", async function() {
     //in alphabetical order
     groupName = groupName.charAt(0).toUpperCase() + groupName.slice(1);
 
+
     //Reset user input textbox
     document.getElementById("groupName").value = "";
 
@@ -135,6 +140,41 @@ pageButton.addEventListener('click', function() {
         view.location.href = 'saved.html';
       });
 });
+
+
+    //Check to make sure user has inputted group name
+    if(groupName === ""){
+        alert("ERROR: MUST GIVE GROUP A NAME");
+        return;
+    }
+
+    //Check to make sure group name is not already used
+    let dup = await new Promise((resolve) => {
+        chrome.storage.local.get(null, function(items) {
+          if(groupName in items){
+              resolve(1);
+          } else {
+              resolve(0);
+          }
+        });
+      });
+    
+    if(dup === 1){
+        alert("ERROR: GROUP NAME ALREADY USED. PICK NEW NAME");
+        return;
+    }
+
+    //Capitalize first letter of group name in order for it to output
+    //in alphabetical order
+    groupName = groupName.charAt(0).toUpperCase() + groupName.slice(1);
+
+    //Reset user input textbox
+    document.getElementById("groupName").value = "";
+
+    //Retrieve tabs and store them using saveGroup()
+    chrome.runtime.sendMessage({ type: "getTabs"}, function (response){
+        saveGroup(response, groupName);
+    });
 
 
 //This button retrieves current active tabs and saves them using
@@ -206,3 +246,4 @@ saveSelectedButton.addEventListener("click", async function() {
 
     //location.reload();
 })
+
