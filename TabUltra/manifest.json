@@ -15,7 +15,9 @@
       },
     "permissions":[
     
+
         "tabs", "storage"
+
 
     ],
     "content_scripts":[

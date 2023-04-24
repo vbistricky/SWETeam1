@@ -131,4 +131,6 @@ pageButton.addEventListener('click', function() {
     chrome.extension.getViews({type: 'popup'}).forEach(function(view) {
         view.location.href = 'popup.html';
       });
+
 });
+
