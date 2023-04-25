@@ -22,45 +22,36 @@
   grid-gap: 84px 84px;
 }
 
-.u-section-1 .u-container-layout-1 {
-  padding: 10px;
+	.u-section-1 .u-container-layout-1 {
+  padding: 10px 0;
 }
-
 .u-section-1 .u-text-2 {
-  margin: 0 auto 0 0;
+  margin: 0 auto 0 10px;
 }
-
 .u-section-1 .u-text-3 {
   font-size: 1.875rem;
-  margin: 0 auto 0 0;
+  margin: 0 -819px 0 10px;
 }
-
 .u-section-1 .u-container-layout-2 {
-  padding: 10px;
+  padding: 10px 0;
 }
-
 .u-section-1 .u-text-4 {
-  margin: 0 auto 0 0;
+  margin: 0 auto 0 10px;
 }
-
 .u-section-1 .u-text-5 {
   font-size: 1.875rem;
-  margin: 0 auto 0 0;
+  margin: 0 -819px 0 10px;
 }
-
 .u-section-1 .u-container-layout-3 {
-  padding: 10px;
+  padding: 10px 0;
 }
-
 .u-section-1 .u-text-6 {
-  margin: 0 auto 0 0;
+  margin: 0 auto 0 10px;
 }
-
 .u-section-1 .u-text-7 {
   font-size: 1.875rem;
-  margin: 0 auto 0 0;
+  margin: 0 -819px 0 10px;
 }
-
 .u-section-1 .u-image-1 {
   width: 163px;
   height: 200px;
