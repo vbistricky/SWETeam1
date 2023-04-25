@@ -49,6 +49,14 @@ function displayAll(){
                 });
             });
 
+            var openSelected = document.createElement("button");
+            openSelected.textContent = "Open Selected Tabs";
+                openSelected.style.position = 'relative'
+
+            openSelected.addEventListener("click", function(){
+
+            });
+
             //Create button to delete group
             var delButton = document.createElement("button");
             delButton.textContent = "Delete Group";
@@ -94,22 +102,48 @@ function displayAll(){
 
                 //Add list item to list of tabs
                 groupList.appendChild(tabElement);
+
+                //iterate
             });
+
+            var rename = document.createElement("button");
+            rename.textContent = "Rename"; 
+                rename.style.display = 'inline'; 
+                rename.style.position = 'relative'; 
+                rename.style.left = '10px'; 
+
+            rename.addEventListener("click", function(){
+                
+                let newName = prompt("Input new name for group: '" + key + "'");
+                if(newName != null){
+                chrome.storage.local.get(null, function(items){
+                    let newG = []
+                    console.log(items.type)
+                    items[key].forEach((tab) => {
+                        console.log("x")
+                        newG.push(tab);
+                    });
+                    
+                    chrome.storage.local.set({ [newName]: newG }, function() {
+                    });
+                })
+                chrome.storage.local.remove(key);
+                location.reload();
+                }
+            });
+
 
             //In order, add title of group, open button, close button,
             //and list of tabs to the container
             container.appendChild(field); 
             container.appendChild(title);
+            container.appendChild(rename);
             container.appendChild(groupList);
             container.appendChild(openButton);
+            //container.appendChild(openSelected);
             container.appendChild(delButton);
             container.appendChild(linebreak);
-           
 
-            
-
-            
-            
 
             //This process is repeated for each group of tabs
         }

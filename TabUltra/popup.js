@@ -17,7 +17,6 @@ function saveGroup(saved_tabs, gName){
 //This code is ran every time the default popup is opened/loaded
 window.addEventListener("DOMContentLoaded", function(){
 var iter = 0;
-
     //Message sent to all pages, background.js picks it up and
     //sends back all open tabs
     chrome.runtime.sendMessage({ type: "getTabs"}, function (response){
@@ -100,6 +99,10 @@ saveButton.addEventListener("click", async function() {
         alert("ERROR: MUST GIVE GROUP A NAME");
         return;
     }
+    
+    //Capitalize first letter of group name in order for it to output
+    //in alphabetical order
+    groupName = groupName.charAt(0).toUpperCase() + groupName.slice(1);
 
     //Check to make sure group name is not already used
     let dup = await new Promise((resolve) => {
@@ -112,15 +115,10 @@ saveButton.addEventListener("click", async function() {
         });
       });
     
-    if(dup === 1){
+    if(dup == 1){
         alert("ERROR: GROUP NAME ALREADY USED. PICK NEW NAME");
         return;
     }
-
-    //Capitalize first letter of group name in order for it to output
-    //in alphabetical order
-    groupName = groupName.charAt(0).toUpperCase() + groupName.slice(1);
-
 
     //Reset user input textbox
     document.getElementById("groupName").value = "";
@@ -135,48 +133,12 @@ saveButton.addEventListener("click", async function() {
 
 //New Button that navigates to second page
 const pageButton = document.getElementById('groupsPage');
-pageButton.addEventListener('click', function() {
+pageButton.addEventListener('click', async function() {
     chrome.extension.getViews({type: 'popup'}).forEach(function(view) {
         view.location.href = 'saved.html';
-      });
-});
-
-
-    //Check to make sure user has inputted group name
-    if(groupName === ""){
-        alert("ERROR: MUST GIVE GROUP A NAME");
-        return;
-    }
-
-    //Check to make sure group name is not already used
-    let dup = await new Promise((resolve) => {
-        chrome.storage.local.get(null, function(items) {
-          if(groupName in items){
-              resolve(1);
-          } else {
-              resolve(0);
-          }
-        });
-      });
-    
-    if(dup === 1){
-        alert("ERROR: GROUP NAME ALREADY USED. PICK NEW NAME");
-        return;
-    }
-
-    //Capitalize first letter of group name in order for it to output
-    //in alphabetical order
-    groupName = groupName.charAt(0).toUpperCase() + groupName.slice(1);
-
-    //Reset user input textbox
-    document.getElementById("groupName").value = "";
-
-    //Retrieve tabs and store them using saveGroup()
-    chrome.runtime.sendMessage({ type: "getTabs"}, function (response){
-        saveGroup(response, groupName);
     });
 
-
+});
 //This button retrieves current active tabs and saves them using
 //saveGroup(). Also reloads the popup to update the saved group
 const saveSelectedButton = document.getElementById("saveSelectedTabs");
@@ -191,6 +153,10 @@ saveSelectedButton.addEventListener("click", async function() {
         return;
     }
 
+    //Capitalize first letter of group name in order for it to output
+    //in alphabetical order
+    groupName = groupName.charAt(0).toUpperCase() + groupName.slice(1);
+
     //Check to make sure group name is not already used
     let dup = await new Promise((resolve) => {
         chrome.storage.local.get(null, function(items) {
@@ -202,14 +168,10 @@ saveSelectedButton.addEventListener("click", async function() {
         });
       });
     
-    if(dup === 1){
+    if(dup == 1){
         alert("ERROR: GROUP NAME ALREADY USED. PICK NEW NAME");
         return;
     }
-
-    //Capitalize first letter of group name in order for it to output
-    //in alphabetical order
-    groupName = groupName.charAt(0).toUpperCase() + groupName.slice(1);
 
     //Reset user input textbox
     document.getElementById("groupName").value = "";
@@ -235,11 +197,6 @@ saveSelectedButton.addEventListener("click", async function() {
                 }
                 it = it + 1;
             }
-            
-
-        
-        
-        
         
         saveGroup(selectedTabs, groupName);
     });

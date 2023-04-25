@@ -1,0 +1,27 @@
+ .u-section-1 {
+  background-image: url("images/Background-Gradient.png");
+  background-position: 50% 50%;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 50vw;
+}
+
+.u-section-1 .u-text-1 {
+  margin: 209px auto 0;
+}
+
+.u-section-1 .u-text-2 {
+  font-size: 2.25rem;
+  margin: 67px auto 0 0;
+}
+
+.u-section-1 .u-text-3 {
+  margin: 88px auto 7px 0;
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-text-2 {
+    font-size: 1rem;
+  }
+}
