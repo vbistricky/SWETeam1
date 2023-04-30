@@ -15,7 +15,9 @@
       },
     "permissions":[
     
-        "tabs"
+
+        "tabs", "storage"
+
 
     ],
     "content_scripts":[
@@ -26,6 +28,12 @@
             "js": ["popup.js"]
             
 
+        },
+        {
+
+            "matches":["<all_urls>"],
+          
+            "js": ["saved.js"]
         }
 
 
